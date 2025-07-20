@@ -192,12 +192,12 @@ const OrderDetailsForm = ({ singleOrder, rest }) => {
   ];
   const Courier = [
     {
-      name: "Pathao",
-      id: "Pathao",
-    },
-    {
       name: "SteadFast",
       id: "SteadFast",
+    },
+    {
+      name: "Pathao",
+      id: "Pathao",
     },
   ];
 
@@ -321,7 +321,7 @@ const OrderDetailsForm = ({ singleOrder, rest }) => {
                   className="p-2 bg-blue-500 rounded-md col-span-1"
                 >
                   <span className="pb-10 text-base text-white">
-                    #{i.product_name} ১২ কেজি
+                    #{i.product_name}
                   </span>
                   <div className="flex items-center pt-1 sm:pt-2">
                     <div className="w-2/3">
@@ -335,39 +335,10 @@ const OrderDetailsForm = ({ singleOrder, rest }) => {
                       />
                     </div>
                     <span className="text-sm text-white font-bold">
-                      ক্যারেট
+                      .KG
                     </span>
                   </div>
-                  <div className="bg-slate-100 p-1 text-xs rounded-lg flex  justify-around">
-                    <div className="text-xs">
-                      <h1 className="text-sm leading-tight font-medium">
-                        Sale
-                      </h1>
-                      <span className="text-sm bg-green-200 font-semibold text-green-700 px-2 rounded-full">
-                        {i.sale_price}tk
-                      </span>
-                    </div>
-                    <div className="text-xs">
-                      <h1 className="text-sm leading-tight font-medium">
-                        Weight
-                      </h1>
-                      <span className="text-sm bg-green-200 text-green-700 font-semibold px-2 rounded-full">
-                        {weightDetails.name === i.yup
-                          ? weightDetails.weight
-                          : 0}
-                        kg
-                      </span>
-                    </div>
-                    <div className="text-xs">
-                      <h1 className="text-sm leading-tight font-medium">
-                        Total
-                      </h1>
-                      <span className="text-sm bg-green-200 font-semibold text-green-700 px-2 rounded-full">
-                        {weightDetails.name === i.yup ? weightDetails.price : 0}
-                        /-
-                      </span>
-                    </div>
-                  </div>
+                  
                 </div>
               ))}
               {mango?.length === 0 && (

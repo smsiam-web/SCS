@@ -89,24 +89,30 @@ const AddOrder = ({ onClick }) => {
 
           weight += values[yup];
 
-          if (item?.product_type === "আম") {
-            order.push({
-              title: s.join(" "),
-              quantity: values[yup] * 12,
-              lot: values[yup],
-              sku: item?.sku,
-              price: item.sale_price,
-              total_price: values[yup] * 12 * item.sale_price,
-              type: "mango",
-            });
-          } else {
-            order.push({
+          // if (item?.product_type === "আম") {
+          //   order.push({
+          //     title: s.join(" "),
+          //     quantity: values[yup] * 12,
+          //     lot: values[yup],
+          //     sku: item?.sku,
+          //     price: item.sale_price,
+          //     total_price: values[yup] * 12 * item.sale_price,
+          //     type: "mango",
+          //   });
+          // } else {
+          //   order.push({
+          //     title: s.join(" "),
+          //     quantity: values[yup],
+          //     price: item.sale_price,
+          //     total_price: values[yup] * item.sale_price,
+          //   });
+          // }
+          order.push({
               title: s.join(" "),
               quantity: values[yup],
               price: item.sale_price,
               total_price: values[yup] * item.sale_price,
             });
-          }
         }
       });
 
@@ -207,6 +213,7 @@ const AddOrder = ({ onClick }) => {
                 placeById: user.staff_id,
                 status: "Pending",
                 orderID,
+
               };
               // console.log(orderData);
               try {
@@ -306,6 +313,7 @@ const AddOrder = ({ onClick }) => {
             customer_name: "",
             customer_address: "",
             salePrice: "",
+            courier: "SteadFast",
             received_by: "Admin",
             order_from: "Messenger Order",
             markAs: "Normal",

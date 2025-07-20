@@ -86,22 +86,28 @@ const AddNewOrder = ({ onClick }) => {
 
           weight += values[yup];
 
-          if (item?.product_type === "আম") {
-            order.push({
-              title: s.join(" "),
-              quantity: values[yup] * 12,
-              lot: values[yup],
-              price: item.sale_price,
-              total_price: values[yup] * 12 * item.sale_price,
-            });
-          } else {
-            order.push({
+          // if (item?.product_type === "আম") {
+          //   order.push({
+          //     title: s.join(" "),
+          //     quantity: values[yup] * 12,
+          //     lot: values[yup],
+          //     price: item.sale_price,
+          //     total_price: values[yup] * 12 * item.sale_price,
+          //   });
+          // } else {
+          //   order.push({
+          //     title: s.join(" "),
+          //     quantity: values[yup],
+          //     price: item.sale_price,
+          //     total_price: values[yup] * item.sale_price,
+          //   });
+          // }
+          order.push({
               title: s.join(" "),
               quantity: values[yup],
               price: item.sale_price,
               total_price: values[yup] * item.sale_price,
             });
-          }
         }
       });
 
@@ -270,7 +276,7 @@ const AddNewOrder = ({ onClick }) => {
         console.log(response.data);
         notifications.show({
           title: response?.data.msg,
-          message: "Message sent successfully",
+          message: response?.data.msg,
           color: "blue",
         });
       })
